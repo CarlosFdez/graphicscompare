@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'haml-rails'
 
 
 # Gems used only for assets and not required
@@ -21,7 +22,7 @@ group :assets do
 end
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.0"
+  gem 'rspec-rails', '~> 2.0'
 end
 
 gem 'jquery-rails'

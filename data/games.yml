@@ -1,0 +1,35 @@
+Ys Oath in Felghana:
+  Max Settings:
+    image: ys_max.png
+    settings:
+      Resolution: 1920x1080
+      FSAA: 8 samples
+      Texture Filter: Trilinear
+      Anisotropic Filter: 128-tap (16 samples)
+      32-bit Textures: On
+      Wind Effects: On
+      Water Effects: On
+      Cloud Shadows: On
+      Point Light: On
+      Hardware Vertex Shader: On
+      Z-sort Polygons with Alpha: On
+      Compressed Textures: Off
+      Low-Resolution Textures: Off
+      Mipmapping: On
+  Min Settings:
+    image: ys_min.png
+    settings:
+      Resolution: 1920x1080
+      FSAA: None
+      Texture Filter: Point
+      Anisotropic Filter: none
+      32-bit Textures: On
+      Wind Effects: Off
+      Water Effects: Off
+      Cloud Shadows: Off
+      Point Light: Off
+      Hardware Vertex Shader: Off
+      Z-sort Polygons with Alpha: Off
+      Compressed Textures: On
+      Low-Resolution Textures: On
+      Mipmapping: Off

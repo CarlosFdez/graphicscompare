@@ -8,6 +8,18 @@ require 'rspec/autorun'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+
+# Test methods
+def action_is_success(action)
+  describe "GET '#{action}'" do
+    it "returns http success" do
+      get action
+      response.should be_success
+    end
+  end
+end
+
+
 RSpec.configure do |config|
   # ## Mock Framework
   #

@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe OverviewController do
+describe GamesController do
   action_is_success 'index'
 end

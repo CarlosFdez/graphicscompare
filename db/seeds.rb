@@ -5,3 +5,29 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Used for creating ids
+games_order = [
+  'Ys Oath in Felghana'
+]
+
+yaml = YAML.load_file('data/games.yml')
+Game.delete_all
+Configuration.delete_all
+
+games_order.each_with_index do |item, i|
+  game = Game.new(name: item)
+  game.update_attribute('id', i + 1)
+  game.save
+  
+  puts "Added game #{item}"
+
+  yaml[item].each_pair do |name, settings|
+    config = Configuration.new(name: name, image: settings['image'])
+    config.game = game
+    config.save
+    puts "    Added configuration #{name}"
+  end
+end
+
+puts "Finished adding games and configurations"
