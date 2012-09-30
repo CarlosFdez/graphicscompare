@@ -5,3 +5,19 @@
 .game
   padding: 10px
   border: 1px solid #333
+
+.comparison
+  width: 1920px
+  height: 1080px
+
+.comparison .left,
+.comparison .right
+  float: left
+  position: relative
+  overflow: hidden
+  width: (1920px/2) // width is hardcoded for now
+  height: 1080px // height is hardcoded for now
+
+.comparison .right img
+  position: absolute
+  right: 0
