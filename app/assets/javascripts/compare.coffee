@@ -4,19 +4,26 @@ height = 1080
 dragging = false
 
 window.Compare =
-  initialize: =>
-    $('.divider').mousedown ->
+  initialize: ->
+    $('.comparison').mousedown (e) =>
+      e.preventDefault()
       dragging = true
+      @updatePosition(e.pageX)
 
-    $(document).mouseup ->
+    $(document).mouseup (e) ->
+      e.preventDefault()
       dragging = false
 
-    $(document).mousemove (e) ->
-      unless dragging then return
+    $('.comparison').mousemove (e) ->
+      e.preventDefault()
 
-      drop = e.pageX - $('.left').offset().left
-      if drop < 0 then drop = 0
-      if drop > width then drop = width
+    $(document).mousemove (e) =>
+      @updatePosition(e.pageX) if dragging
 
-      $('.left').css('width', drop)
-      $('.right').css('width', width - drop - 2)
+  updatePosition: (position) ->
+    position -= $('.left').offset().left
+    if position < 0 then position = 0
+    if position > width then position = width
+
+    $('.left').css('width', position)
+    $('.right').css('width', width - position - 2)
