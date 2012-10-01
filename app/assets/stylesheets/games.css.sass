@@ -15,9 +15,26 @@
   float: left
   position: relative
   overflow: hidden
-  width: (1920px/2) // width is hardcoded for now
+  width: ((1920px/2) - 1px) // width is hardcoded for now
   height: 1080px // height is hardcoded for now
 
-.comparison .right img
-  position: absolute
-  right: 0
+  div
+    width: 1920px
+    height: 1080px
+    position: absolute
+
+.comparison .left
+  div
+    background-image: image-url('ys_min.png')
+
+.comparison .right
+  div
+    right: 0
+    background-image: image-url('ys_max.png')
+
+.comparison .divider
+  float: left
+  width: 2px
+  height: 1080px
+  background-color: #000
+  cursor: ew-resize
