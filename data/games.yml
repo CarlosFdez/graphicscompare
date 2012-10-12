@@ -1,8 +1,9 @@
 Ys Oath in Felghana:
   Max Settings:
     image: ys_max.png
+    width: 1920
+    height: 1080
     settings:
-      Resolution: 1920x1080
       FSAA: 8 samples
       Texture Filter: Trilinear
       Anisotropic Filter: 128-tap (16 samples)
@@ -18,8 +19,9 @@ Ys Oath in Felghana:
       Mipmapping: On
   Min Settings:
     image: ys_min.png
+    width: 1920
+    height: 1080
     settings:
-      Resolution: 1920x1080
       FSAA: None
       Texture Filter: Point
       Anisotropic Filter: none

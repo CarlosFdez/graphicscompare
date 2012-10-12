@@ -23,7 +23,11 @@ games_order.each_with_index do |item, i|
   puts "Added game #{item}"
 
   yaml[item].each_pair do |name, settings|
-    config = Configuration.new(name: name, image: settings['image'])
+    config = Configuration.new(
+      name: name,
+      image: settings['image'],
+      width: settings['width'],
+      height: settings['height'])
     config.game = game
     config.save
     puts "    Added configuration #{name}"
