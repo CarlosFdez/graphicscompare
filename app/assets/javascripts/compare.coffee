@@ -20,6 +20,14 @@ window.Compare =
     $(document).mousemove (e) =>
       @updatePosition(e.pageX) if dragging
 
+    $('.comparison .swap-button').click(@swapSides)
+
+  swapSides: =>
+    leftImage = $('.left div').detach()
+    rightImage = $('.right div').detach()
+    $('.left').append(rightImage)
+    $('.right').append(leftImage)
+
   updatePosition: (position) ->
     position -= $('.left').offset().left
     if position < 0 then position = 0
