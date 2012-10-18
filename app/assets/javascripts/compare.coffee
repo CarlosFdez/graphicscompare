@@ -6,6 +6,9 @@ dragging = false
 window.Compare =
   initialize: ->
     $('.comparison').mousedown (e) =>
+      # Don't start dragging if the swap button was pressed
+      return  if $(e.target).hasClass('swap-button')
+
       e.preventDefault()
       dragging = true
       @updatePosition(e.pageX)
@@ -18,7 +21,7 @@ window.Compare =
       e.preventDefault()
 
     $(document).mousemove (e) =>
-      @updatePosition(e.pageX) if dragging
+      @updatePosition(e.pageX)  if dragging
 
     $('.comparison .swap-button').click(@swapSides)
 
